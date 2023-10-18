@@ -271,15 +271,10 @@ const pets = [
       "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119",
   },
 ];
+// fat arrow function below, most used in actual workplaces
 
 const app = document.querySelector("#app");
-
 let domString = "";
-// remember to set interpolation/object iteration to singular, so => pet.name not pets.name
-// use back tick at beginning and end only, do not use for every object iteration.
-// for (pet of pets) {
-// domString += `<div class="card" style="width: 18rem;">
-
 for (pet of pets) {
   domString += `<div class="card" style="width: 18rem;">
   <img src="${pet.imageUrl}" class="card-img-top" alt="...">
@@ -292,5 +287,53 @@ for (pet of pets) {
   </div>
 </div>`;
 }
-app.innerH;
+
+const renderToDom = (array) => {
+  array.forEach((object) => {
+    for (pet of pets) {
+      domString += `<div class="card" style="width: 18rem;">
+    <img src="${object.imageUrl}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">${object.name}</h5>
+      <header class="card-text">${object.color}</header>
+      <p class="card-text">${object.specialSkill}</p>
+      <footer class="card-text">${object.type}</footer>
+      <a href="#" class="btn btn-primary">Empty Button</a>
+    </div>
+  </div>`;
+    }
+  });
+};
+
+renderToDom(pets);
+
+const typeCat = document.querySelector("#cat");
+// event listener
+typeCat.addEventListener("click", () => {
+  let catArray = [];
+  for (pet of pets) {
+    if (pet.type === true) {
+      newPetArray.push(pet);
+    }
+  }
+  renderToDom(catArray);
+});
+
+// remember to set interpolation/object iteration to singular, so => pet.name not pets.name
+// use back tick at beginning and end only, do not use for every object iteration.
+// for (pet of pets) {
+// domString += `<div class="card" style="width: 18rem;">
+
+// for (pet of pets) {
+//   domString += `<div class="card" style="width: 18rem;">
+//   <img src="${pet.imageUrl}" class="card-img-top" alt="...">
+//   <div class="card-body">
+//     <h5 class="card-title">${pet.name}</h5>
+//     <header class="card-text">${pet.color}</header>
+//     <p class="card-text">${pet.specialSkill}</p>
+//     <footer class="card-text">${pet.type}</footer>
+//     <a href="#" class="btn btn-primary">Empty Button</a>
+//   </div>
+// </div>`;
+// }
 app.innerHTML = domString;
