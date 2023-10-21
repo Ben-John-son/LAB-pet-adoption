@@ -1,3 +1,10 @@
 .card {
+  border: black 2px solid;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  flex-direction: row;
 }

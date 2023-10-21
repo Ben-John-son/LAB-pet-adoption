@@ -259,6 +259,7 @@ const pets = [
     specialSkill:
       "Gives hugs with appropriate pressure and for the right length of time.",
     type: "cat",
+
     imageUrl: "http://img.izismile.com/img/img2/20090219/cats_02.jpg",
   },
   {
@@ -271,55 +272,87 @@ const pets = [
       "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119",
   },
 ];
+
 // fat arrow function below, most used in actual workplaces
 
-const app = document.querySelector("#app");
-let domString = "";
-for (pet of pets) {
-  domString += `<div class="card" style="width: 18rem;">
-  <img src="${pet.imageUrl}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">${pet.name}</h5>
-    <header class="card-text">${pet.color}</header>
-    <p class="card-text">${pet.specialSkill}</p>
-    <footer class="card-text">${pet.type}</footer>
-    <a href="#" class="btn btn-primary">Empty Button</a>
-  </div>
-</div>`;
-}
-
 const renderToDom = (array) => {
-  array.forEach((object) => {
-    for (pet of pets) {
-      domString += `<div class="card" style="width: 18rem;">
-    <img src="${object.imageUrl}" class="card-img-top" alt="...">
+  let domString = "";
+  for (pet of pets) {
+    domString += `<div class="card" style="width: 18rem;">
+    <img src="${pet.imageUrl}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">${object.name}</h5>
-      <header class="card-text">${object.color}</header>
-      <p class="card-text">${object.specialSkill}</p>
-      <footer class="card-text">${object.type}</footer>
-      <a href="#" class="btn btn-primary">Empty Button</a>
+      <h5 class="card-title">${pet.name}</h5>
+      <header class="card-text">${pet.color}</header>
+      <p class="card-text">${pet.specialSkill}</p>
+      <footer class="card-text">${pet.type}</footer>
+      <button class="btn btn-danger" class="delete--${pet.id}">Delete</button>
+
     </div>
   </div>`;
-    }
-  });
+  }
+  const app = document.querySelector("#app");
+  app.innerHTML = domString;
 };
 
+const show = document.querySelector("#show-all");
+show.addEventListener("click", () => {
+  renderToDom(pets);
+});
+const app = document.querySelector("#app");
 renderToDom(pets);
 
-const typeCat = document.querySelector("#cat");
-// event listener
-typeCat.addEventListener("click", () => {
-  let catArray = [];
+app.innerHTML = domString;
+
+const typeCat = document.querySelector("#cats");
+
+// renderToDom(pets);
+
+// const typeCat = document.querySelector("#cat");
+// event listener, maybe test with a console log to see if button is working, then try to do what it is supposed to
+
+// let catArray = [];
+// typeCat.addEventListener("click", () => {
+//   const catsOnly = pets.filter(filterCats);
+
+//   function filterCats(type) {
+//     if (type === "cat") {
+//       return catArray.push(pet)
+//     } else {
+//       return renderToDom(catArray)
+//     }
+// }
+
+const filter = (pets, type) => {
+  console.log("clicked");
+  let newCatArray = [];
   for (pet of pets) {
-    if (pet.type === true) {
-      newPetArray.push(pet);
+    if (pet.type === type) {
+      newCatArray.push(pet);
     }
   }
-  renderToDom(catArray);
+  return newCatArray;
+};
+
+typeCat.addEventListener("click", () => {
+  const cats = filter(pets, "cat");
+  app.innerHTML(cat);
 });
 
-// remember to set interpolation/object iteration to singular, so => pet.name not pets.name
+// () => {
+//   filter(pets, "cat");
+//   // renderToDom(newCatArray);
+// });
+
+// typeCat.addEventListener("click", () => {
+//   for (pet of pets) {
+//     if (pet.type === "cat") {
+//       return catArray.push(pet);
+//     }
+//   }
+//   renderToDom(catArray);
+// });
+
+// remember to set interpolation/object iteration to singular, so => pet.name not pets.namevscode-file://vscode-app/c:/Users/greyp/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html
 // use back tick at beginning and end only, do not use for every object iteration.
 // for (pet of pets) {
 // domString += `<div class="card" style="width: 18rem;">
@@ -336,4 +369,61 @@ typeCat.addEventListener("click", () => {
 //   </div>
 // </div>`;
 // }
-app.innerHTML = domString;
+// app.innerHTML = domString;
+
+// const form = document.querySelector("form");
+// const createPet = (e) => {
+//   e.preventDefault();
+//   const newPetObj = {
+//     id: pets.length + 1,
+//     name: document.querySelector("#petName").value,
+//     // do query selectors for other parts of the form. Will look like example above, with different id.
+//     // for checkbox, use document.querySelector("#checkboxname").checked
+//   };
+//   pets.push(newPetObj);
+//   renderToDom(pets);
+//   form.reset();
+// };
+
+// form.addEventListener("submit", createPet);
+
+// const renderToDom = (divId, htmlToRender) => {
+//   const selectedDiv = document.querySelector(divId);
+//   selectedDiv.innerHTML = htmlToRender;
+// };
+
+// const cardsOnDom = (array) => {
+//   let domString = "";
+//   for (pet of pets) {
+//     domString += `<div class="card" style="width: 18rem;">
+//   <img src="${pet.imageUrl}" class="card-img-top" alt="...">
+//      <div class="card-body">
+//       <h5 class="card-title">${pet.name}</h5>
+//      <header class="card-text">${pet.color}</header>     <p class="card-text">${pet.specialSkill}</p>
+//      <footer class="card-text">${pet.type}</footer>
+//      <button class="btn btn-danger" class="delete--${pet.id}">Delete</button>
+
+//    </div>
+//   </div>`;
+//   }
+
+//   renderToDom("#app", domString);
+// };
+
+// const filter = (array, typeString) => {
+//   const catArray = [];
+//   for (pet of pets) {
+//     if (pet.type === "cat") {
+//       catArray.push(pet);
+//     }
+//   }
+
+//   return catArray;
+// };
+
+// const catButton = document.querySelector("#cats");
+
+// catButton.addEventListener("click", () => {
+//   const catsCats = filter(pets, "cat");
+//   cardsOnDom(catsCats);
+// });
