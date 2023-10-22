@@ -4,7 +4,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-content: flex-start;
-  flex-basis: 35%;
+  /* flex-basis: 35%; */
 }
 
 .card {

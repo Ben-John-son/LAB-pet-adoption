@@ -287,7 +287,8 @@ const renderToDom = (array) => {
       <header class="card-text">${pet.color}</header>
       <p class="card-text">${pet.specialSkill}</p>
       <footer class="card-text">${pet.type}</footer>
-      <button class="btn btn-danger" class="delete--${pet.id}">Delete</button>
+      
+      <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
       </div>
       </div>
   </div>`;
@@ -299,10 +300,10 @@ const renderToDom = (array) => {
 const app = document.querySelector("#app");
 
 const deletePet = (event) => {
+  // note that .target.id needs to be id of button. previously was not working because in card above, delete was a class, not id
   if (event.target.id.includes("delete")) {
     const [, id] = event.target.id.split("--");
-    const index = pets.findIndex((event) => event.id === Number(id));
-
+    const index = pets.findIndex((obj) => obj.id === Number(id));
     pets.splice(index, 1);
     renderToDom(pets);
   }
@@ -374,14 +375,18 @@ const filter3 = () => {
 typeDog.addEventListener("click", filter3);
 
 const form = document.querySelector("form");
+
 const createPet = (e) => {
   e.preventDefault();
   const newPetObj = {
     id: pets.length + 1,
     name: document.querySelector("#petName").value,
-    submit: document.querySelector("#sub").value,
-    password: document.querySelector("#exampleInputPassword1").value,
-    checkbox: document.querySelector("#exampleCheck1").checked,
+    // type: document.querySelector("#").value,
+    type: document.querySelector("#type").value,
+    color: document.querySelector("#color").value,
+    specialSkill: document.querySelector("#specialSkill").value,
+    image: document.querySelector("#imageUrl").value,
+
     // do query selectors for other parts of the form. Will look like example above, with different id.
     // for checkbox, use document.querySelector("#checkboxname").checked
   };
