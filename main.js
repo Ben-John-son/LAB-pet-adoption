@@ -259,7 +259,7 @@ const pets = [
     specialSkill:
       "Gives hugs with appropriate pressure and for the right length of time.",
     type: "cat",
-
+    cat: true,
     imageUrl: "http://img.izismile.com/img/img2/20090219/cats_02.jpg",
   },
   {
@@ -273,11 +273,12 @@ const pets = [
   },
 ];
 
+// const form = [{}];
 // fat arrow function below, most used in actual workplaces
 
 const renderToDom = (array) => {
   let domString = "";
-  for (pet of pets) {
+  for (pet of array) {
     domString += `<div class="card" style="width: 18rem;">
     <img src="${pet.imageUrl}" class="card-img-top" alt="...">
     <div class="card-body">
@@ -286,7 +287,7 @@ const renderToDom = (array) => {
       <p class="card-text">${pet.specialSkill}</p>
       <footer class="card-text">${pet.type}</footer>
       <button class="btn btn-danger" class="delete--${pet.id}">Delete</button>
-
+      
     </div>
   </div>`;
   }
@@ -294,136 +295,74 @@ const renderToDom = (array) => {
   app.innerHTML = domString;
 };
 
-const show = document.querySelector("#show-all");
-show.addEventListener("click", () => {
-  renderToDom(pets);
-});
 const app = document.querySelector("#app");
+
+const deletePet = () => {
+  console.log("clicked");
+};
+
+app.addEventListener("click", deletePet);
 renderToDom(pets);
 
-app.innerHTML = domString;
+// app.innerHTML = domString;
 
 const typeCat = document.querySelector("#cats");
 
-// renderToDom(pets);
+const typeDog = document.querySelector("#dog");
 
-// const typeCat = document.querySelector("#cat");
-// event listener, maybe test with a console log to see if button is working, then try to do what it is supposed to
+const typeDino = document.querySelector("#dino");
 
-// let catArray = [];
-// typeCat.addEventListener("click", () => {
-//   const catsOnly = pets.filter(filterCats);
-
-//   function filterCats(type) {
-//     if (type === "cat") {
-//       return catArray.push(pet)
-//     } else {
-//       return renderToDom(catArray)
-//     }
-// }
-
-const filter = (pets, type) => {
+const filter1 = () => {
   console.log("clicked");
   let newCatArray = [];
   for (pet of pets) {
-    if (pet.type === type) {
+    if (pet.type === "cat") {
       newCatArray.push(pet);
     }
   }
-  return newCatArray;
+  console.log(newCatArray);
+  renderToDom(newCatArray);
+};
+typeCat.addEventListener("click", filter1);
+
+const filter2 = () => {
+  console.log("clicked");
+  let newDinoArray = [];
+  for (pet of pets) {
+    if (pet.type === "dino") {
+      newDinoArray.push(pet);
+    }
+  }
+  console.log(newDinoArray);
+  renderToDom(newDinoArray);
+};
+typeDino.addEventListener("click", filter2);
+
+const filter3 = () => {
+  console.log("clicked");
+  let newDogArray = [];
+  for (pet of pets) {
+    if (pet.type === "dog") {
+      newDogArray.push(pet);
+    }
+  }
+  console.log(newDogArray);
+  renderToDom(newDogArray);
+};
+typeDog.addEventListener("click", filter3);
+
+const form = document.querySelector("form");
+const createPet = (e) => {
+  e.preventDefault();
+  const newPetObj = {
+    id: pets.length + 1,
+    name: document.querySelector("#petName").value,
+    // do query selectors for other parts of the form. Will look like example above, with different id.
+    // for checkbox, use document.querySelector("#checkboxname").checked
+  };
+  pets.push(newPetObj);
+  renderToDom(pets);
+  form.reset();
 };
 
-typeCat.addEventListener("click", () => {
-  const cats = filter(pets, "cat");
-  app.innerHTML(cat);
-});
-
-// () => {
-//   filter(pets, "cat");
-//   // renderToDom(newCatArray);
-// });
-
-// typeCat.addEventListener("click", () => {
-//   for (pet of pets) {
-//     if (pet.type === "cat") {
-//       return catArray.push(pet);
-//     }
-//   }
-//   renderToDom(catArray);
-// });
-
-// remember to set interpolation/object iteration to singular, so => pet.name not pets.namevscode-file://vscode-app/c:/Users/greyp/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html
-// use back tick at beginning and end only, do not use for every object iteration.
-// for (pet of pets) {
-// domString += `<div class="card" style="width: 18rem;">
-
-// for (pet of pets) {
-//   domString += `<div class="card" style="width: 18rem;">
-//   <img src="${pet.imageUrl}" class="card-img-top" alt="...">
-//   <div class="card-body">
-//     <h5 class="card-title">${pet.name}</h5>
-//     <header class="card-text">${pet.color}</header>
-//     <p class="card-text">${pet.specialSkill}</p>
-//     <footer class="card-text">${pet.type}</footer>
-//     <a href="#" class="btn btn-primary">Empty Button</a>
-//   </div>
-// </div>`;
-// }
-// app.innerHTML = domString;
-
-// const form = document.querySelector("form");
-// const createPet = (e) => {
-//   e.preventDefault();
-//   const newPetObj = {
-//     id: pets.length + 1,
-//     name: document.querySelector("#petName").value,
-//     // do query selectors for other parts of the form. Will look like example above, with different id.
-//     // for checkbox, use document.querySelector("#checkboxname").checked
-//   };
-//   pets.push(newPetObj);
-//   renderToDom(pets);
-//   form.reset();
-// };
-
-// form.addEventListener("submit", createPet);
-
-// const renderToDom = (divId, htmlToRender) => {
-//   const selectedDiv = document.querySelector(divId);
-//   selectedDiv.innerHTML = htmlToRender;
-// };
-
-// const cardsOnDom = (array) => {
-//   let domString = "";
-//   for (pet of pets) {
-//     domString += `<div class="card" style="width: 18rem;">
-//   <img src="${pet.imageUrl}" class="card-img-top" alt="...">
-//      <div class="card-body">
-//       <h5 class="card-title">${pet.name}</h5>
-//      <header class="card-text">${pet.color}</header>     <p class="card-text">${pet.specialSkill}</p>
-//      <footer class="card-text">${pet.type}</footer>
-//      <button class="btn btn-danger" class="delete--${pet.id}">Delete</button>
-
-//    </div>
-//   </div>`;
-//   }
-
-//   renderToDom("#app", domString);
-// };
-
-// const filter = (array, typeString) => {
-//   const catArray = [];
-//   for (pet of pets) {
-//     if (pet.type === "cat") {
-//       catArray.push(pet);
-//     }
-//   }
-
-//   return catArray;
-// };
-
-// const catButton = document.querySelector("#cats");
-
-// catButton.addEventListener("click", () => {
-//   const catsCats = filter(pets, "cat");
-//   cardsOnDom(catsCats);
-// });
+form.addEventListener("submit", createPet);

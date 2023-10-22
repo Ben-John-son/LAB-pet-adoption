@@ -1,10 +1,21 @@
-.card {
+/* /* .card {
   border: black 2px solid;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-}
-.container {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+} */
+/* .container {
   display: flex;
   flex-direction: row;
 }
+
+.buttoncontain {
+  width: 50%;
+  display: flex;
+  border: 1px black solid;
+  flex-direction: row;
+
+  aligncontent: flex-start;
+} */ */
