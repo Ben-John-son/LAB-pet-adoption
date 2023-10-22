@@ -301,11 +301,10 @@ const app = document.querySelector("#app");
 const deletePet = (event) => {
   if (event.target.id.includes("delete")) {
     const [, id] = event.target.id.split("--");
-    const index = pets.findIndex((pet) => pet.id === Number(id));
+    const index = pets.findIndex((event) => event.id === Number(id));
 
     pets.splice(index, 1);
     renderToDom(pets);
-    console.log(pets.length);
   }
   console.log("clicked");
 };
