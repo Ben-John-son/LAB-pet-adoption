@@ -279,7 +279,8 @@ const pets = [
 const renderToDom = (array) => {
   let domString = "";
   for (pet of array) {
-    domString += `<div class="card" style="width: 18rem;">
+    domString += `<div class="cardcontainer">
+    <div class="card" style="width: 18rem;">
     <img src="${pet.imageUrl}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">${pet.name}</h5>
@@ -287,8 +288,8 @@ const renderToDom = (array) => {
       <p class="card-text">${pet.specialSkill}</p>
       <footer class="card-text">${pet.type}</footer>
       <button class="btn btn-danger" class="delete--${pet.id}">Delete</button>
-      
-    </div>
+      </div>
+      </div>
   </div>`;
   }
   const app = document.querySelector("#app");
@@ -297,11 +298,33 @@ const renderToDom = (array) => {
 
 const app = document.querySelector("#app");
 
-const deletePet = () => {
+const deletePet = (event) => {
+  if (event.target.id.includes("delete")) {
+    const [, id] = event.target.id.split("--");
+    const index = pets.findIndex((pet) => pet.id === Number(id));
+
+    pets.splice(index, 1);
+    renderToDom(pets);
+    console.log(pets.length);
+  }
   console.log("clicked");
 };
 
 app.addEventListener("click", deletePet);
+
+// app.addEventListener("click", (e) => {
+// if(e.target.id.includes("delete")) {
+// const [, id] = e.target.id.split("--";)
+
+// const index = pets.findIndex(e => e.id === Number(id));
+
+// pets.splice(index, 1);
+// renderToDom(pet)
+
+// }
+
+// })
+
 renderToDom(pets);
 
 // app.innerHTML = domString;
@@ -357,6 +380,9 @@ const createPet = (e) => {
   const newPetObj = {
     id: pets.length + 1,
     name: document.querySelector("#petName").value,
+    submit: document.querySelector("#sub").value,
+    password: document.querySelector("#exampleInputPassword1").value,
+    checkbox: document.querySelector("#exampleCheck1").checked,
     // do query selectors for other parts of the form. Will look like example above, with different id.
     // for checkbox, use document.querySelector("#checkboxname").checked
   };

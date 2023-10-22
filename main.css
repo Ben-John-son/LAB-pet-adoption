@@ -1,21 +1,76 @@
-/* /* .card {
-  border: black 2px solid;
+.container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-} */
-/* .container {
-  display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  align-content: flex-start;
+  flex-basis: 35%;
 }
 
-.buttoncontain {
-  width: 50%;
-  display: flex;
+.card {
+  padding: 5px;
   border: 1px black solid;
-  flex-direction: row;
+  background-color: rgb(215, 185, 238);
+}
 
-  aligncontent: flex-start;
-} */ */
+body {
+  background-color: rgb(136, 201, 179);
+}
+
+.box {
+  border: black 2px solid;
+  display: flex;
+
+  justify-content: center;
+}
+
+.form-control {
+  border: 1px solid black;
+}
+
+.buttonbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 75px;
+  padding: 10px;
+}
+
+.btn-primary {
+  color: orange;
+  background-color: purple;
+  border-radius: 25%;
+  border: 1px solid black;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#sub {
+  border-radius: 25%;
+}
+
+.cardcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-basis: content;
+}
+
+#app {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px;
+}
+
+.card-img-top {
+  border-radius: 50%;
+}
