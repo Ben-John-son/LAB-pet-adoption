@@ -259,6 +259,7 @@ const pets = [
     specialSkill:
       "Gives hugs with appropriate pressure and for the right length of time.",
     type: "cat",
+    cat: true,
     imageUrl: "http://img.izismile.com/img/img2/20090219/cats_02.jpg",
   },
   {
@@ -272,25 +273,122 @@ const pets = [
   },
 ];
 
+// const form = [{}];
+// fat arrow function below, most used in actual workplaces
+
+const renderToDom = (array) => {
+  let domString = "";
+  for (pet of array) {
+    domString += `<div class="cardcontainer">
+    <div class="card" style="width: 18rem;">
+    <img src="${pet.imageUrl}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">${pet.name}</h5>
+      <header class="card-text">${pet.color}</header>
+      <p class="card-text">${pet.specialSkill}</p>
+      <footer class="card-text">${pet.type}</footer>
+      <button class="btn btn-danger" class="delete--${pet.id}">Delete</button>
+      </div>
+      </div>
+  </div>`;
+  }
+  const app = document.querySelector("#app");
+  app.innerHTML = domString;
+};
+
 const app = document.querySelector("#app");
 
-let domString = "";
-// remember to set interpolation/object iteration to singular, so => pet.name not pets.name
-// use back tick at beginning and end only, do not use for every object iteration.
-// for (pet of pets) {
-// domString += `<div class="card" style="width: 18rem;">
+const deletePet = (event) => {
+  if (event.target.id.includes("delete")) {
+    const [, id] = event.target.id.split("--");
+    const index = pets.findIndex((pet) => pet.id === Number(id));
 
-for (pet of pets) {
-  domString += `<div class="card" style="width: 18rem;">
-  <img src="${pet.imageUrl}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">${pet.name}</h5>
-    <header class="card-text">${pet.color}</header>
-    <p class="card-text">${pet.specialSkill}</p>
-    <footer class="card-text">${pet.type}</footer>
-    <a href="#" class="btn btn-primary">Empty Button</a>
-  </div>
-</div>`;
-}
-app.innerH;
-app.innerHTML = domString;
+    pets.splice(index, 1);
+    renderToDom(pets);
+    console.log(pets.length);
+  }
+  console.log("clicked");
+};
+
+app.addEventListener("click", deletePet);
+
+// app.addEventListener("click", (e) => {
+// if(e.target.id.includes("delete")) {
+// const [, id] = e.target.id.split("--";)
+
+// const index = pets.findIndex(e => e.id === Number(id));
+
+// pets.splice(index, 1);
+// renderToDom(pet)
+
+// }
+
+// })
+
+renderToDom(pets);
+
+// app.innerHTML = domString;
+
+const typeCat = document.querySelector("#cats");
+
+const typeDog = document.querySelector("#dog");
+
+const typeDino = document.querySelector("#dino");
+
+const filter1 = () => {
+  console.log("clicked");
+  let newCatArray = [];
+  for (pet of pets) {
+    if (pet.type === "cat") {
+      newCatArray.push(pet);
+    }
+  }
+  console.log(newCatArray);
+  renderToDom(newCatArray);
+};
+typeCat.addEventListener("click", filter1);
+
+const filter2 = () => {
+  console.log("clicked");
+  let newDinoArray = [];
+  for (pet of pets) {
+    if (pet.type === "dino") {
+      newDinoArray.push(pet);
+    }
+  }
+  console.log(newDinoArray);
+  renderToDom(newDinoArray);
+};
+typeDino.addEventListener("click", filter2);
+
+const filter3 = () => {
+  console.log("clicked");
+  let newDogArray = [];
+  for (pet of pets) {
+    if (pet.type === "dog") {
+      newDogArray.push(pet);
+    }
+  }
+  console.log(newDogArray);
+  renderToDom(newDogArray);
+};
+typeDog.addEventListener("click", filter3);
+
+const form = document.querySelector("form");
+const createPet = (e) => {
+  e.preventDefault();
+  const newPetObj = {
+    id: pets.length + 1,
+    name: document.querySelector("#petName").value,
+    submit: document.querySelector("#sub").value,
+    password: document.querySelector("#exampleInputPassword1").value,
+    checkbox: document.querySelector("#exampleCheck1").checked,
+    // do query selectors for other parts of the form. Will look like example above, with different id.
+    // for checkbox, use document.querySelector("#checkboxname").checked
+  };
+  pets.push(newPetObj);
+  renderToDom(pets);
+  form.reset();
+};
+
+form.addEventListener("submit", createPet);
