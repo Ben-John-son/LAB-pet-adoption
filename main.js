@@ -11,11 +11,11 @@ const pets = [
   {
     id: 2,
     name: "Trouble",
-    color: "Brown",
+    color: "Green",
     specialSkill:
       "Just picks the tomatoes off of a sandwich instead of requesting a whole new sandwich.",
     type: "dino",
-    imageUrl: "http://www.jozilife.co.za/wp-content/uploads/The-Dino-Expo.jpg",
+    imageUrl: "https://i.redd.it/vek3nbfena491.jpg",
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ const pets = [
     specialSkill: "Comfortable in the outdoors for up to eight hours.",
     type: "cat",
     imageUrl:
-      "http://www.catster.com/wp-content/uploads/2017/08/A-fluffy-cat-looking-funny-surprised-or-concerned.jpg",
+      "https://media.istockphoto.com/id/1440359502/photo/portrait-of-scottish-straight-stupefied-cat.jpg?s=612x612&w=0&k=20&c=indZ8YA5nQ6fWrW9uB6S3nApvpX6l1zyNikL1p_KiKY=",
   },
   {
     id: 6,
@@ -69,7 +69,7 @@ const pets = [
     specialSkill: "Comfortable in the outdoors for up to eight hours.",
     type: "dino",
     imageUrl:
-      "http://www.theouthousers.com/images/jck//ThanosCopter/news/grumpasaur.jpg",
+      "https://cdn.theatlantic.com/media/img/photo/2019/01/photos-terrible-lizards-dinosaur-st/t04_515284840/main_1500.jpg",
   },
   {
     id: 9,
@@ -96,7 +96,7 @@ const pets = [
     specialSkill: "Can be around food without staring creepily at it.",
     type: "dino",
     imageUrl:
-      "http://www.cantref.com/userfiles/events/walking%20dino.jpg?w=600",
+      "https://sadanduseless.b-cdn.net/wp-content/uploads/2023/05/dinosaur-statues3.jpg",
   },
   {
     id: 12,
@@ -115,7 +115,7 @@ const pets = [
       "Expertly quotes and recognizes dialogue from early seasons of The Simpsons.",
     type: "dog",
     imageUrl:
-      "http://1kjkdg1axrkd2g03cnboj761.wpengine.netdna-cdn.com/wp-content/uploads/2017/12/braydon-anderson-105552-e1512684107659.jpg",
+      "https://live-production.wcms.abc-cdn.net.au/11ab9022db2ec5acd4afd9c00c86806b?impolicy=wcms_crop_resize&cropH=329&cropW=584&xPos=0&yPos=28&width=862&height=485",
   },
   {
     id: 14,
@@ -133,16 +133,16 @@ const pets = [
     specialSkill: "Burps minimally.",
     type: "cat",
     imageUrl:
-      "http://cathumor.net/wp-content/uploads/2013/12/cat-humor-funny-karate-cat-2.jpg",
+      "https://sadanduseless.b-cdn.net/wp-content/uploads/2023/05/dinosaur-statues2.jpg",
   },
   {
     id: 16,
     name: "Smokey",
-    color: "Brown",
+    color: "Green",
     specialSkill: "Drives at a safe rate of speed in snow or rain.",
     type: "dino",
     imageUrl:
-      "https://images.readwrite.com/wp-content/uploads/2018/03/t-rex-dino-quiz-e1490854556549.jpg",
+      "https://sadanduseless.b-cdn.net/wp-content/uploads/2023/05/dinosaur-statues12.jpg",
   },
   {
     id: 17,
@@ -151,7 +151,8 @@ const pets = [
     specialSkill:
       "Does not freak out if you haven’t seen his favorite movie (The Big Lebowski).",
     type: "cat",
-    imageUrl: "http://www.funnycatsite.com/pictures/Close_Up_Yawn.jpg",
+    imageUrl:
+      "https://keaiart.com/cdn/shop/files/4_d80c3d46-6f41-4a1a-ae08-bacf67458141.jpg?v=1686550143",
   },
   {
     id: 18,
@@ -160,7 +161,7 @@ const pets = [
     specialSkill: "Proficient in air guitar",
     type: "dino",
     imageUrl:
-      "https://www.nation.co.ke/image/view/-/4078922/highRes/1742693/-/maxw/600/-/1453yvh/-/DINO.jpg",
+      "https://sadanduseless.b-cdn.net/wp-content/uploads/2023/05/dinosaur-statues9.jpg",
   },
   {
     id: 19,
@@ -177,7 +178,8 @@ const pets = [
     color: "Black",
     specialSkill: "Uses litter box at appropriate hours.",
     type: "cat",
-    imageUrl: "http://www.funnycatsite.com/pictures/Lazy_White_Cat.jpg",
+    imageUrl:
+      "https://i.pinimg.com/550x/18/e1/6f/18e16f24b77477dd2918cbad9d683cda.jpg",
   },
   {
     id: 21,
@@ -186,7 +188,7 @@ const pets = [
     specialSkill: "Owns a Nintendo Power Glove.",
     type: "dino",
     imageUrl:
-      "https://img.buzzfeed.com/buzzfeed-static/static/2015-11/2/12/enhanced/webdr15/anigif_enhanced-29802-1446485228-10.gif?crop=250:165;0,0&downsize=715",
+      "https://i0.wp.com/jaxpsychogeo.com/wp-content/uploads/2012/06/sentinel-at-beach-and-peach-2.jpg",
   },
   {
     id: 22,
@@ -195,7 +197,7 @@ const pets = [
     specialSkill: "Is comfortable with jokes about his receding hairline.",
     type: "cat",
     imageUrl:
-      "http://funnyanimalphoto.com/wp-content/uploads/2013/08/cat_caught_mouse_thegatewaypundit.jpg",
+      "https://imagedelivery.net/9sCnq8t6WEGNay0RAQNdvQ/UUID-cl90fiiz973959vmqy6nt9a3ng/public",
   },
   {
     id: 23,
@@ -213,8 +215,7 @@ const pets = [
     specialSkill:
       "Participates in karaoke but does not force others to go out to karaoke.",
     type: "dog",
-    imageUrl:
-      "http://www.dogbreedplus.com/dog_breeds/images/basset-hound-4.jpg",
+    imageUrl: "https://live.staticflickr.com/7442/14148358814_5e61f969ae_z.jpg",
   },
   {
     id: 25,
@@ -223,7 +224,7 @@ const pets = [
     specialSkill: "Knows the words to 4 rap songs.",
     type: "cat",
     imageUrl:
-      "http://funbk.s3.amazonaws.com/wp-content/uploads/2016/06/funny-cat-video-which-will-make-you-laugh-louder.jpg",
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/19ed6120-ee56-4be3-bcac-2c1ba0ec2c44/d4oljtl-7dd4ee91-a3e7-4efa-a2c4-926b7e573e8c.jpg/v1/fill/w_600,h_400,q_75,strp/stupid_red_cat_by_rheis_d4oljtl-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDAwIiwicGF0aCI6IlwvZlwvMTllZDYxMjAtZWU1Ni00YmUzLWJjYWMtMmMxYmEwZWMyYzQ0XC9kNG9sanRsLTdkZDRlZTkxLWEzZTctNGVmYS1hMmM0LTkyNmI3ZTU3M2U4Yy5qcGciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.FBNewyKzDAL_jr0aOBHr-HgPpprrOl89XOXPBoIsgPY",
   },
   {
     id: 26,
@@ -269,7 +270,7 @@ const pets = [
     specialSkill: "Doesn’t get weirded out by the word “moist.”",
     type: "dino",
     imageUrl:
-      "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119",
+      "https://i.cbc.ca/1.4811166.1536161083!/fileImage/httpImage/dinosaur.jpg",
   },
 ];
 
@@ -334,6 +335,13 @@ const typeCat = document.querySelector("#cats");
 const typeDog = document.querySelector("#dog");
 
 const typeDino = document.querySelector("#dino");
+const showAll = document.querySelector("#show-all");
+
+const filter4 = () => {
+  renderToDom(pets);
+};
+
+showAll.addEventListener("click", filter4);
 
 const filter1 = () => {
   console.log("clicked");

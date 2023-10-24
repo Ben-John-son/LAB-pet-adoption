@@ -1,20 +1,22 @@
-.container {
+/* .container {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: flex-start;
-  /* flex-basis: 35%; */
-}
+  flex-flow: row wrap;
+  
+} */
 
 .card {
   padding: 5px;
-  border: 1px black solid;
-  background-color: rgb(215, 185, 238);
+  border: 2px black solid;
+  outline: solid 6px yellow;
+  background-image: linear-gradient(to right, rgb(182, 123, 228), yellow);
 }
 
 body {
-  background-color: rgb(136, 201, 179);
+  background-image: linear-gradient(
+    to right,
+    rgb(223, 154, 27),
+    rgb(138, 205, 231)
+  );
 }
 
 .box {
@@ -25,32 +27,40 @@ body {
 }
 
 .form-control {
-  border: 1px solid black;
+  background-image: linear-gradient(blue, pink);
+  border: 2px solid darkblue;
+  color: aliceblue;
+  /* display: flex;
+  flex-flow: row wrap;
+  /* justify-content: center; */
+  /* align-content: center;
+  width: 50px; */
 }
-
 .buttonbox {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
-  gap: 75px;
-  padding: 10px;
+  gap: 100px;
+  padding: 20px;
 }
 
 .btn-primary {
-  color: orange;
-  background-color: purple;
-  border-radius: 25%;
   border: 1px solid black;
-}
-
-form {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+  outline: solid 2px yellow;
+  color: rgb(208, 211, 10);
+  background-image: linear-gradient(
+    rgb(136, 27, 136),
+    rgb(238, 96, 238),
+    rgb(236, 198, 236)
+  );
+  gap: 20px;
+  border-radius: 50%;
+  padding: 20px;
 }
 
 #sub {
+  background-image: linear-gradient(red, green, yellow);
   border-radius: 25%;
 }
 
@@ -72,5 +82,20 @@ form {
 }
 
 .card-img-top {
-  border-radius: 50%;
+  outline: 4px solid gainsboro;
+  border: 1px black solid;
+
+  /* border-radius: 50%; */
+}
+
+.mb-3 {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.btn-danger {
+  border: 1px solid black;
+}
+.card-text {
 }
