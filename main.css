@@ -1,0 +1,87 @@
+body {
+  background: linear-gradient(
+    rgb(230, 240, 230),
+    rgb(236, 211, 215),
+    rgb(224, 224, 185),
+    rgb(154, 170, 154),
+    rgb(219, 199, 202),
+    rgb(145, 165, 145),
+    rgb(209, 238, 209),
+    rgb(247, 222, 226),
+    rgb(214, 214, 185),
+    rgb(144, 158, 144),
+    rgb(205, 205, 243)
+  );
+  margin: 0px;
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  width: auto;
+  gap: 40px;
+}
+
+header {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.card {
+  margin-bottom: 30px;
+  width: 25%;
+  height: 60vh;
+  text-align: center;
+}
+
+img {
+  height: 40vh;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 200px;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: rgba(22, 106, 201, 0.23);
+  color: black;
+  position: fixed;
+  margin-top: 0px;
+  width: 100%;
+  z-index: 2;
+  list-style-type: none;
+}
+
+li {
+  margin-left: 10px;
+  font-family: "Jersey 15", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  color: rgb(238, 117, 4);
+}
+
+a:hover {
+  color:azure;
+  cursor: pointer;
+}
+
+a:active {
+  color:rgb(237, 238, 175);
+} 
+
+a {
+  margin-left: 10px;
+  .jersey-15-regular {
+    font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  color: rgb(243, 193, 117);
+}
