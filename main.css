@@ -23,29 +23,26 @@ body {
   margin-top: 100px;
   width: auto;
   gap: 40px;
-  
 }
 
-.navbar{
-  display: flex; 
+.navbar {
+  display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin-top: 20px;;
-  width:0px;
+  margin-top: 20px;
+  width: 0px;
   height: 0px;
   height: 0px;
   margin: 0;
   background-color: rgb(169, 182, 238);
-  /* color: orange; */
-  
 }
 
 header {
   text-align: center;
   margin-top: 80px;
   font-family: "Jersey 15", serif;
-    font-weight: 400;
-    font-style: normal;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .card {
@@ -54,26 +51,34 @@ header {
   height: 60vh;
   text-align: center;
   margin: 0px;
-    font-family: "Jersey 15", serif;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 30px;
-    margin:0;
-    color: white;
-    opacity: 0.8;
-    -webkit-text-stroke: .5px rgb(73, 73, 187);
+  font-family: "Jersey 15", serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 30px;
+  margin: 0;
+  color: white;
+  opacity: 0.8;
+  -webkit-text-stroke: 0.5px rgb(73, 73, 187);
 }
 
 .card:hover {
-  background:linear-gradient(rgb(197, 223, 223), rgb(247, 214, 187), rgb(219, 221, 221), rgb(243, 196, 94));
-  opacity: .9;
+  background: linear-gradient(
+    rgb(197, 223, 223),
+    rgb(247, 214, 187),
+    rgb(219, 221, 221),
+    rgb(243, 196, 94)
+  );
+  opacity: 0.9;
   cursor: pointer;
 }
 
 .card-body {
   height: 15vh;
- line-height:1rem;
- font-size: 20px;
+  line-height: 1rem;
+  font-size: 20px;
+  margin-bottom: 0px;
+  margin-top: 5px;
+  padding:0;
 }
 
 img {
@@ -106,13 +111,13 @@ li {
 }
 
 a:hover {
-  color:rgb(227, 233, 233);
+  color: rgb(227, 233, 233);
   cursor: pointer;
 }
 
 a:active {
-  color:rgb(237, 238, 175);
-} 
+  color: rgb(237, 238, 175);
+}
 
 a {
   margin-left: 10px;
@@ -125,22 +130,14 @@ a {
 }
 
 form {
-  /* display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-items: center; */
-  /* flex-wrap: wrap; */
-  /* gap: 4px; */
-  /* padding: 10px; */
-  /* background-color:rgba(22, 106, 201, 0.23); */
   font-family: "Jersey 15", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
   width: 100%;
   /* border: rgba(59, 59, 59, 0.527) 1px solid; */
-  color:white;
+  color: white;
   margin: 0;
   padding-left: 50px;
   padding-right: 50px;
@@ -159,7 +156,6 @@ input {
   width: 20px;
 }
 
-
 .cats {
   color: rgb(163, 162, 163);
   font-weight: 550;
@@ -174,13 +170,6 @@ input {
   color: rgba(25, 55, 189, 0.774);
 }
 
-/* .nav-item {
-  text-decoration: underline;
-  background-color:  rgba(22, 106, 201, 0.23);
-  padding: 0;
-  margin: 0;
-} */
-
 .offcanvas {
   background-color: rgba(22, 106, 201, 0.23);
   /* opacity: 0.9; */
@@ -189,15 +178,41 @@ input {
   text-decoration-color: white;
 }
 
- #aboutNav {
+#aboutNav {
   margin-left: 7%;
   color: white;
   text-decoration: underline;
   font-weight: bold;
-} 
+}
 
 #aboutUl {
-  background-color:  rgba(22, 106, 201, 0.01);
+  background-color: rgba(22, 106, 201, 0.01);
   border: none;
   color: white;
+}
+
+/* .deleteBtn {
+ /* display: inline-block;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+  margin-top: 0px; */
+  /* float: right;
+  margin-right: 10px;
+  background-color: rgba(22, 106, 201, 0.23); */
+
+
+.delteB {
+  float: right;
+  margin-right: 10px;
+  background-color: rgba(22, 106, 201, 0.23);
+}
+
+.delteB:hover {
+  background-color: rgba(228, 100, 100, 0.849);
+}
+
+.delteB:active {
+  background-color: red;
 }

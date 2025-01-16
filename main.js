@@ -283,7 +283,8 @@ let domAnimal = document.querySelector(".animal");
 let domOther = document.querySelector(".others");
 let domNew = document.querySelector(".new");
 let suB = document.querySelector("form");
-let about = document.querySelector(".nav-item")
+let about = document.querySelector(".nav-item");
+
 
 let renderToDom = (arr) => {
   let domString = "";
@@ -295,6 +296,9 @@ let renderToDom = (arr) => {
       <p id="nameOf" class="card-text">${pet.name}</p>
       <p class="card-text">${pet.specialSkill}</p>
       <p id='footer' class="card-text">Color: ${pet.color}</p>
+      <div class="delteBtn">
+      <button id="delete--${pet.id}" class="delteB">X</button>
+      </div>
     </div>
   </div>`;
   }
@@ -351,24 +355,35 @@ const createPet = (e) => {
   };
   pets.push(newPetObj);
   renderToDom(pets);
-  document.querySelector("form").reset()
+  document.querySelector("form").reset();
 };
 
-
 let aboutUS = () => {
-  let domString = '';
+  let domString = "";
   domString += `
   <div>
   <h1>Ben's Pet Adoption was created in January of 2025. <br>We accept animals of any kind. </h1>
   <br>
   <h2>For more resources, please visit <span><a href="https://github.com/Ben-John-son/LAB-pet-adoption">This Link</a></span></h2>
-  </div>`
-  getApp.innerHTML = domString
-}
+  </div>`;
+  getApp.innerHTML = domString;
+};
+
+const deletePet = (event) => {
+  // note that .target.id needs to be id of button. previously was not working because in card above, delete was a class, not id
+  if (event.target.id.includes("delete")) {
+    const [, id] = event.target.id.split("--");
+    const index = pets.findIndex((obj) => obj.id === Number(id));
+    pets.splice(index, 1);
+    renderToDom(pets);
+  }
+  console.log("clicked");
+};
 
 domHome.addEventListener("click", getAll);
 domCats.addEventListener("click", getCats);
 domDogs.addEventListener("click", getDogs);
 domOther.addEventListener("click", getOthers);
 suB.addEventListener("submit", createPet);
-about.addEventListener("click", aboutUS)
+about.addEventListener("click", aboutUS);
+getApp.addEventListener("click", deletePet);
