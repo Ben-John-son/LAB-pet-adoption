@@ -12,9 +12,8 @@ body {
     rgb(144, 158, 144),
     rgb(205, 205, 243)
   );
-  margin: 0px;
+  background-position: no-repeat;
 }
-
 #app {
   display: flex;
   flex-direction: row;
@@ -24,11 +23,29 @@ body {
   margin-top: 100px;
   width: auto;
   gap: 40px;
+  
+}
+
+.navbar{
+  display: flex; 
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 20px;;
+  width:0px;
+  height: 0px;
+  height: 0px;
+  margin: 0;
+  background-color: rgb(169, 182, 238);
+  /* color: orange; */
+  
 }
 
 header {
   text-align: center;
   margin-top: 80px;
+  font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .card {
@@ -36,6 +53,27 @@ header {
   width: 25%;
   height: 60vh;
   text-align: center;
+  margin: 0px;
+    font-family: "Jersey 15", serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 30px;
+    margin:0;
+    color: white;
+    opacity: 0.8;
+    -webkit-text-stroke: .5px rgb(73, 73, 187);
+}
+
+.card:hover {
+  background:linear-gradient(rgb(197, 223, 223), rgb(247, 214, 187), rgb(219, 221, 221), rgb(243, 196, 94));
+  opacity: .9;
+  cursor: pointer;
+}
+
+.card-body {
+  height: 15vh;
+ line-height:1rem;
+ font-size: 20px;
 }
 
 img {
@@ -61,14 +99,14 @@ ul {
 li {
   margin-left: 10px;
   font-family: "Jersey 15", serif;
-  font-weight: 400;
-  font-style: normal;
+  font-weight: 200;
   font-size: 30px;
   color: rgb(238, 117, 4);
+  /* -webkit-text-stroke: .5px rgb(241, 140, 45); */
 }
 
 a:hover {
-  color:azure;
+  color:rgb(227, 233, 233);
   cursor: pointer;
 }
 
@@ -84,4 +122,82 @@ a {
     font-style: normal;
   }
   color: rgb(243, 193, 117);
+}
+
+form {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center; */
+  /* flex-wrap: wrap; */
+  /* gap: 4px; */
+  /* padding: 10px; */
+  /* background-color:rgba(22, 106, 201, 0.23); */
+  font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+  width: 100%;
+  /* border: rgba(59, 59, 59, 0.527) 1px solid; */
+  color:white;
+  margin: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+br {
+  height: 5px;
+  margin-top: 2px;
+}
+
+#nameOf {
+  text-decoration: underline;
+}
+
+input {
+  width: 20px;
+}
+
+
+.cats {
+  color: rgb(163, 162, 163);
+  font-weight: 550;
+  -webkit-text-stroke: rgb(80, 3, 80);
+}
+
+.dogs {
+  color: rgba(87, 9, 110, 0.5);
+}
+
+.others {
+  color: rgba(25, 55, 189, 0.774);
+}
+
+/* .nav-item {
+  text-decoration: underline;
+  background-color:  rgba(22, 106, 201, 0.23);
+  padding: 0;
+  margin: 0;
+} */
+
+.offcanvas {
+  background-color: rgba(22, 106, 201, 0.23);
+  /* opacity: 0.9; */
+  border: none;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+ #aboutNav {
+  margin-left: 7%;
+  color: white;
+  text-decoration: underline;
+  font-weight: bold;
+} 
+
+#aboutUl {
+  background-color:  rgba(22, 106, 201, 0.01);
+  border: none;
+  color: white;
 }

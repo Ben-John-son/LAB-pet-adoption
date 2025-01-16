@@ -68,7 +68,7 @@ const pets = [
     name: "Ginger",
     color: "Grey",
     specialSkill: "Comfortable in the outdoors for up to eight hours.",
-    type: "dino",
+    type: "dog",
     imageUrl:
       "https://imageio.forbes.com/specials-images/imageserve/61b1f75e9bdd78e1c08fdd64/A-funny-labrador-dog-with-a-curiously-placed-bubble-in-its-behind-/0x0.jpg?format=jpg&crop=922,956,x0,y279,safe&width=960",
   },
@@ -92,10 +92,10 @@ const pets = [
   },
   {
     id: 11,
-    name: "Coco",
+    name: "Camila",
     color: "Orange",
     specialSkill: "Can be around food without staring creepily at it.",
-    type: "dino",
+    type: "dog",
     imageUrl:
       "https://images.unsplash.com/photo-1570122942985-bca0a44624da?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnVubnklMjBkb2d8ZW58MHx8MHx8fDA%3D",
   },
@@ -132,7 +132,7 @@ const pets = [
     name: "Coco",
     color: "Red",
     specialSkill: "Burps minimally.",
-    type: "cat",
+    type: "dino",
     imageUrl:
       "https://media.istockphoto.com/id/986720632/photo/close-up-snowy-owl-eye-with-wooden-background.jpg?s=612x612&w=0&k=20&c=R3vjYLh-LtH41kSdVW1Ndr_4mdE8Z2AQwDPXGW34ZhI=",
   },
@@ -168,7 +168,7 @@ const pets = [
     name: "Callie",
     color: "Blue",
     specialSkill: "Listens attentively to boring stories.",
-    type: "dog",
+    type: "cat",
     imageUrl:
       "https://media.istockphoto.com/id/1281893590/photo/tiger-and-butterfly.jpg?s=612x612&w=0&k=20&c=mFT_4fFdWJ1kxRA9LJQoc8U1u4j_ZqQz1gZJVzt0Z1I=",
   },
@@ -177,7 +177,7 @@ const pets = [
     name: "Spooky",
     color: "Black",
     specialSkill: "Uses litter box at appropriate hours.",
-    type: "cat",
+    type: "dino",
     imageUrl:
       "https://i.pinimg.com/474x/0c/77/d8/0c77d8243be988b8006cd462134614a6.jpg",
   },
@@ -214,7 +214,7 @@ const pets = [
     color: "Brown",
     specialSkill:
       "Participates in karaoke but does not force others to go out to karaoke.",
-    type: "dog",
+    type: "cat",
     imageUrl:
       "https://i.pinimg.com/550x/07/a0/28/07a0283b3848adc96b2ec42868904305.jpg",
   },
@@ -278,8 +278,12 @@ let getApp = document.querySelector("#app");
 let domCats = document.querySelector(".cats");
 let domDogs = document.querySelector(".dogs");
 let domOthers = document.querySelector(".others");
-let domHome = document.querySelector(".home")
-
+let domHome = document.querySelector(".home");
+let domAnimal = document.querySelector(".animal");
+let domOther = document.querySelector(".others");
+let domNew = document.querySelector(".new");
+let suB = document.querySelector("form");
+let about = document.querySelector(".nav-item")
 
 let renderToDom = (arr) => {
   let domString = "";
@@ -288,16 +292,18 @@ let renderToDom = (arr) => {
     <div class="card">
     <img src="${pet.imageUrl}" class="card-img-top" alt="...">
     <div class="card-body">
-      <p class="card-text">${pet.name}</p>
+      <p id="nameOf" class="card-text">${pet.name}</p>
+      <p class="card-text">${pet.specialSkill}</p>
+      <p id='footer' class="card-text">Color: ${pet.color}</p>
     </div>
   </div>`;
   }
   getApp.innerHTML = domString;
 };
-
+renderToDom(pets);
 let getAll = () => {
-  renderToDom(pets)
-}
+  renderToDom(pets);
+};
 
 let getCats = () => {
   let newArr = [];
@@ -317,12 +323,52 @@ let getDogs = () => {
     }
   }
   renderToDom(newArr);
+};
+
+let getOthers = () => {
+  let newArr = [];
+  for (pet of pets) {
+    if (pet.type === "dino") {
+      newArr.push(pet);
+    }
+  }
+  renderToDom(newArr);
+};
+
+const createPet = (e) => {
+  e.preventDefault();
+  const newPetObj = {
+    id: pets.length + 1,
+    name: document.querySelector("#petName").value,
+    // type: document.querySelector("#").value,
+    type: document.querySelector("#type").value,
+    color: document.querySelector("#color").value,
+    specialSkill: document.querySelector("#specialSkill").value,
+    imageUrl: document.querySelector("#imageUrl").value,
+
+    // do query selectors for other parts of the form. Will look like example above, with different id.
+    // for checkbox, use document.querySelector("#checkboxname").checked
+  };
+  pets.push(newPetObj);
+  renderToDom(pets);
+  document.querySelector("form").reset()
+};
+
+
+let aboutUS = () => {
+  let domString = '';
+  domString += `
+  <div>
+  <h1>Ben's Pet Adoption was created in January of 2025. <br>We accept animals of any kind. </h1>
+  <br>
+  <h2>For more resources, please visit <span><a href="https://github.com/Ben-John-son/LAB-pet-adoption">This Link</a></span></h2>
+  </div>`
+  getApp.innerHTML = domString
 }
 
-
-
-
-domHome.addEventListener("click", getAll)
+domHome.addEventListener("click", getAll);
 domCats.addEventListener("click", getCats);
-domDogs.addEventListener("click", getDogs)
-renderToDom(pets);
+domDogs.addEventListener("click", getDogs);
+domOther.addEventListener("click", getOthers);
+suB.addEventListener("submit", createPet);
+about.addEventListener("click", aboutUS)
