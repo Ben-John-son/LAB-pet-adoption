@@ -78,7 +78,7 @@ header {
   font-size: 20px;
   margin-bottom: 0px;
   margin-top: 5px;
-  padding:0;
+  padding: 0;
 }
 
 img {
@@ -198,10 +198,9 @@ input {
   overflow: hidden;
   z-index: 3;
   margin-top: 0px; */
-  /* float: right;
+/* float: right;
   margin-right: 10px;
   background-color: rgba(22, 106, 201, 0.23); */
-
 
 .delteB {
   float: right;
