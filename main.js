@@ -14,7 +14,7 @@ const pets = [
     color: "Brown",
     specialSkill:
       "Just picks the tomatoes off of a sandwich instead of requesting a whole new sandwich.",
-    type: "dino",
+    type: "other",
     imageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbuZwXQJVa-SPJ6apGnURzsHhYsFb0OTKVlg&s",
   },
@@ -23,7 +23,7 @@ const pets = [
     name: "Whiskers",
     color: "Yellow",
     specialSkill: "Can prove he is a real man by drinking whiskey.",
-    type: "dino",
+    type: "other",
     imageUrl:
       "https://mydinosaurs.com/wp-content/uploads/2017/02/2-3-600x400.jpg",
   },
@@ -132,7 +132,7 @@ const pets = [
     name: "Coco",
     color: "Red",
     specialSkill: "Burps minimally.",
-    type: "dino",
+    type: "other",
     imageUrl:
       "https://media.istockphoto.com/id/986720632/photo/close-up-snowy-owl-eye-with-wooden-background.jpg?s=612x612&w=0&k=20&c=R3vjYLh-LtH41kSdVW1Ndr_4mdE8Z2AQwDPXGW34ZhI=",
   },
@@ -141,7 +141,7 @@ const pets = [
     name: "Smokey",
     color: "Brown",
     specialSkill: "Drives at a safe rate of speed in snow or rain.",
-    type: "dino",
+    type: "other",
     imageUrl:
       "https://media.istockphoto.com/id/1512660697/photo/close-up-funny-capybara.jpg?s=612x612&w=0&k=20&c=vmlq2gUqDDTYuNUkEB-Tfrc-mJkjonKWtCrprUKbBVA=",
   },
@@ -159,7 +159,7 @@ const pets = [
     name: "Salem",
     color: "Brown",
     specialSkill: "Proficient in air guitar",
-    type: "dino",
+    type: "other",
     imageUrl:
       "https://i.pinimg.com/originals/80/be/c7/80bec74a1b3aabee6400c30958d0e807.jpg",
   },
@@ -177,7 +177,7 @@ const pets = [
     name: "Spooky",
     color: "Black",
     specialSkill: "Uses litter box at appropriate hours.",
-    type: "dino",
+    type: "other",
     imageUrl:
       "https://i.pinimg.com/474x/0c/77/d8/0c77d8243be988b8006cd462134614a6.jpg",
   },
@@ -186,7 +186,7 @@ const pets = [
     name: "Miss kitty",
     color: "Red",
     specialSkill: "Owns a Nintendo Power Glove.",
-    type: "dino",
+    type: "other",
     imageUrl:
       "https://s.yimg.com/ny/api/res/1.2/7Of6w5EED8rerREVwzR.CA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTUzOQ--/https://media.zenfs.com/en-US/homerun/news.mashable/00423d35745dd60554c3fea04415ca48",
   },
@@ -241,7 +241,7 @@ const pets = [
     name: "Chloe",
     color: "Green",
     specialSkill: "Admits he is wrong",
-    type: "dino",
+    type: "other",
     imageUrl:
       "https://assets.creationmuseum.org/img/pages/1703-DinoDen-TwoCard.jpg",
   },
@@ -268,7 +268,7 @@ const pets = [
     name: "Lucy",
     color: "Red",
     specialSkill: "Doesn’t get weirded out by the word “moist.”",
-    type: "dino",
+    type: "other",
     imageUrl:
       "https://wwfgifts-files.worldwildlife.org/wwfgifts/images/great-white-shark-large-photo.jpg",
   },
@@ -332,7 +332,7 @@ let getDogs = () => {
 let getOthers = () => {
   let newArr = [];
   for (pet of pets) {
-    if (pet.type === "dino") {
+    if (pet.type === "other") {
       newArr.push(pet);
     }
   }
